@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org/">
+<head>
+<title>Insert title here</title>
+</head>
+<body>
+<h3>EMPLOYEE EDIT FORM</h3>
+<form th:action="@{/update}" method="POST" th:object="${employee}">
+<pre>
+ID    : <input type="text" th:field="*{eid}" readonly/>
+NAME  : <input type="text" th:field="*{ename}" />
+EMAIL : <input type="text" th:field="*{email}" readonly/>
+SAL   : <input type="text" th:field="*{esal}" />
+DEP   : <select th:field="*{dept}">
+			<option value="">--SELECT-</option>
+			<option value="DEV">DEV</option>
+			<option value="BA">BA</option>
+			<option value="QA">QA</option>
+		</select>
+		<input type="submit" value="Modify Employee"/>
+</pre>
+</form>
+</body>
+</html>
